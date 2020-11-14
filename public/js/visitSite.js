@@ -1,0 +1,11 @@
+pannellum.viewer('visitSite', {
+    "type": "equirectangular",
+    "panorama": "http://localhost:8080/virtualtour/public/images/visitSite.jpg",
+    "autoRotate": -4,
+    "autoLoad": true
+}); 
+
+// $("#visit-virtually").click(function()
+//{
+  //  window.location = "http://localhost:8080/virtualtour/previewTour";
+//})
