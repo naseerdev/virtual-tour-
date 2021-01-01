@@ -1,6 +1,6 @@
 pannellum.viewer('visitSite', {
     "type": "equirectangular",
-    "panorama": "http://localhost:8080/virtualtour/public/images/visitSite.jpg",
+    "panorama": "http://localhost:8080/virtualtour/public/images/paris.jpg",
     "autoRotate": -4,
     "autoLoad": true
 }); 

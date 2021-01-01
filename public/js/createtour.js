@@ -786,6 +786,7 @@ for(var i=0;i<createHotspot.length;i++)
 
 
 targetRoom= {};
+
  viewer =pannellum.viewer('panorama',defaultRoom);
  viewer.on('mousedown', function(event) {
     // For pitch and yaw of center of viewer
@@ -872,6 +873,8 @@ $("#hotspot-tooltip").click(function()
       
 function removeHotspot(removeRoom)
 {
+  
+  
       var removeRoom= removeRoom.closest('div').firstChild.innerHTML;
       console.log(removeRoom);
       var FloorName=$("#dropdown-floor").find(":selected").attr("value");
@@ -889,7 +892,8 @@ function removeHotspot(removeRoom)
                   {
                     if(targetRemoverRoom.sceneId===removeRoom)
                     {
-                        createHotspot[i].scenes[obj].hotSpots.splice(removeRoom,1);
+                      
+                        createHotspot[i].scenes[obj].hotSpots.splice(targetRemoverRoom,1);
                         
 
                         
@@ -899,7 +903,9 @@ function removeHotspot(removeRoom)
                }
             }
          }
+         
       } 
+      
       $(".pnlm-hotspot").remove();
       roomHotSpot(currntRom);
       

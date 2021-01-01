@@ -12,8 +12,10 @@
              <div class="col-lg-4 col-sm-12 text-center">
                  <h1 class="display-2 set-font-size mt-5 py-5 text-white">Enter Name of City</h1>
                  <p class="text-white lore mb-4" > Give Us City Name Then We Provide You Suitable Hostel For You.</p>
-                 <input class="form-control form-control-lg mb-4 py-4 " type="text" id="hname" placeholder="Enter City Name">
+                 
+                 <input class="form-control form-control-lg mb-4 py-4 " type="text" id="hname" placeholder="Enter City Name" required>
                  <button id="findhostel" class="btn btn-outline-primary tn-custom-style  btn-lg text-white"  role="button">Find Hostel <i class="fa fa-arrow-right text-white"></i></button>
+                 
              </div>
              <div id="hostel_names" style="max-height:400px;text-align:center" class="col-lg-8 col-sm-12 d-none d-lg-block py-5 px-2">
          <h3 class="list-hostel"  >List of Available Hostels</h3>
@@ -138,24 +140,28 @@
              <div class="col-lg-6 send-mail-img flex justify-content-center mt-5">
                  <img class="mt-4 mail-hover" width="300" height="250" src="public\images\How-To-Send-Email-To-New-Users.png" alt="Sent Mail">
              </div>
+             
              <div class="col-lg-6 justify-content-center mt-5 less-margin">
+                <form>
                 <div class="wrap-input1 validate-input mt-3" data-validate="Name is required">
-                <input class="form-control form-control-lg input-custom " type="text" id="name_std" placeholder="Name">
+                <input class="form-control form-control-lg input-custom " type="text" id="name_std" placeholder="Name" required>
                 </div>
                 
                 <div class="wrap-input1 validate-input mt-3" data-validate="Valid email is required: ex@abc.xyz">
-                <input class="form-control form-control-lg input-custom" type="email" id="email_std" placeholder="Email">
+                <input class="form-control form-control-lg input-custom" type="email" id="email_std" placeholder="Email" required>
                 </div>
                 <div class="wrap-input1 validate-input mt-3" data-validate="Subject is required">
-                <input class="form-control form-control-lg input-custom" type="text" id="subject" placeholder="Subject"> 
+                <input class="form-control form-control-lg input-custom" type="text" id="subject" placeholder="Subject" required> 
                 </div>
                 <div class="wrap-input1 validate-input mt-3" data-validate="Message is required">
-                    <textarea style="width: 100%;height:100px;" class="input1" id="message" placeholder="Message"></textarea>
+                    <textarea style="width: 100%;height:100px;" class="input1" id="message" placeholder="Message" required></textarea>
                 </div>
                 <div class="flex justify-content-center mt-3" >
                 <button id="sendMail" class="send-btn">Send Email <i class="fa fa-long-arrow-right" aria-hidden="true"></i> </button>
                 </div>
+            </form>
              </div>
+            
              
 
          </div>
@@ -165,6 +171,7 @@
 
 
  </section><!-- end of contact us -->
+ @include('inc.footer')
  <script>
        $(document).ready(function(){
         var enter="entrance";
@@ -195,7 +202,7 @@ $("#sendMail").click(function()
 
 
    $.ajax({ 
-       type: "GET", 
+       type: "POST", 
        url: "sendbasicemail", 
        data:{'emaildata':JSON.stringify(emaidata)},
        error: function(xhr, status, error) {

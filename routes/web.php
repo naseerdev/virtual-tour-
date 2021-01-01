@@ -24,6 +24,11 @@ Route::get('/', function(){
     
    
     });
+    Route::get('/videocall',function()
+    {
+      return view('pages.video');
+
+    });
 
     Route::group(['middleware'=>['auth','admin']],function()
     {
@@ -46,7 +51,7 @@ Auth::routes();
 
 Route::get('/visitSite','virtualTourController@visitSite');
 //Route::post('/sendMail', 'MailController@mail')->name('sendMail');
-Route::get('sendbasicemail','MailController@basic_email');
+Route::post('sendbasicemail','MailController@basic_email');
 Route::get('/chat','ChatController@index')->middleware('auth')->name('chat.index');
 Route::get('/chat/{id}', 'ChatController@show')->middleware('auth')->name('chat.show');
 Route::post('/chat/getChat/{id}', 'ChatController@getChat')->middleware('auth');
@@ -54,3 +59,5 @@ Route::post('/chat/sendChat', 'ChatController@sendChat')->middleware('auth');
 Route::post('/getHostel', 'DashboardController@hostel')->name('getHostel')->middleware('auth');
 Route::get('/{hostelName}','DashboardController@showHostel');
 Route::get('/visitVirtually/{userID}','DashboardController@visitVirtually')->name('visitVirtually/{userID}');
+Route::post('/startChat', 'FriendController@store')->name('startChat');
+Route::post('/GiveReview','DashboardController@Review')->name('GiveReview');

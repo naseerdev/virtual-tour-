@@ -10,7 +10,7 @@
 @endphp
 
 @section('content')
-<section id="image_upload">
+<section  id="image_upload">
   
 <div class="container-fluid">
   
@@ -44,10 +44,15 @@
           <div id="roomsinput" >
             
             <div class="row mt-5">
+              
                 <div class="col-lg-3">
+                
                 <h4 class="text-primary custom-size-label">Enter Room Name</h4> 
-                <input class="mt-3 form-control form-control-lg input-custom" type="text" id="room_name" name="room_name" placeholder="Room Name">
+                
+                <input class="mt-3 form-control form-control-lg input-custom" type="text" id="room_name" name="room_name" placeholder="Room Name" >
+              
                 </div>
+              
                 <div id="divID" class="col-lg-3"> 
                   <h4 class="text-primary custom-size-label">Select Floor</h4> 
                   <select id="floors" class="mt-3 form-control form-control-lg input-custom increase-margin">
@@ -58,6 +63,7 @@
                       <option value="custom">Custom</option>
                   </select>
                 </div>
+              
                 <div class="col-lg-3">
                   <h4 class="text-primary custom-size-label">Student Capacity</h4> 
                   <input class="mt-3 form-control form-control-lg input-custom " type="text" id="std_capacity" name="std_capacity" placeholder="Student Capacity">
@@ -75,7 +81,7 @@
               <span class="input-group-btn mx-auto mt-2 ">
                 <form id="image-form">
                   <span class="btn btn-primary btn-file custom-adj">
-                    Select File  <input type="file" id="imgInp">
+                    Select File  <input type="file" id="imgInp" required>
                   </span>
                 </form>
               </span>
@@ -117,6 +123,9 @@
 </div>
 
 </section>
+<div class="t"> 
+</div>
+
 <script>
   
   var userID=JSON.parse(<?php echo $userid; ?> );

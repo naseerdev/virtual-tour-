@@ -37,12 +37,27 @@ class FriendController extends Controller
      */
     public function store(Request $request)
     {
+
         $friend = new Friend;
-        $friend->user_id = Auth::user()->id;
-        $friend->friend_id = $request->friend_id;
-        $friend->save();
-        Session::flash('success', 'Friend has been added');
-        return redirect()->back();
+       $adminhostelID=json_decode($request['adminhostelID']);
+       $user_id = Auth::user()->id;
+       if($user_id !== $adminhostelID)
+       {
+
+       $friend = Friend::firstOrNew(['user_id' =>$user_id,'friend_id'=>$adminhostelID]);
+       
+       $friend->save();
+       }
+      // DB::table('friends')::firstOrNew(['user_id' => $user_id],['friend_id'=>$adminhostelID]);
+      
+     
+
+   //   $friend->user_id = Auth::user()->id;
+   //    $friend->friend_id = $adminhostelID;
+   //    $friend->save();
+     //   Session::flash('success', 'Friend has been added');
+     return response()->json("success");
+    
 
     }
 
