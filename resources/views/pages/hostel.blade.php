@@ -3,6 +3,7 @@
 @section('content')
 @php
 $userid=json_encode($userID);
+$ratings=json_encode($ratings);
     
 @endphp
 
@@ -20,7 +21,7 @@ $userid=json_encode($userID);
             <div class="container">
             <div class="row">
                 <div class="col-lg-12 mt-5 text-center">
-                    <h1 class=" hostel-name">{{$address->hostel_name}}</h1>
+                    <h1 id="hostel_N" class=" hostel-name">{{$address->hostel_name}}</h1>
                     <div class="hname-design col-lg-6 mx-auto">
     
                     </div>
@@ -159,17 +160,253 @@ $userid=json_encode($userID);
 
 
     </div>
+    <div class="row">
+    <div style="background-color:#F6F4F4 " class="col-lg-6 mt-5  justify-content-center">
+      <div>
+        <h1 class="contact mt-3">Give Ratting About This Hostel</h1>
+        <fieldset style="margin:22px 38% !important" class="starability-fade"> 
+          
+          <input type="radio" id="rate1" name="rating" value="1" />
+          <label for="rate1" title="Terrible">1 star</label>
+
+          
+          <input type="radio" id="rate2" name="rating" value="2" />
+          <label for="rate2" title="Not good">2 stars</label>
+
+          <input type="radio" id="rate3" name="rating" value="3" />
+          <label for="rate3" title="Average">3 stars</label>
+
+          <input type="radio" id="rate4" name="rating" value="4" />
+          <label for="rate4" title="Very good">4 stars</label>
+      
+      
+          <input type="radio" id="rate5" name="rating" value="5" />
+          <label for="rate5" title="Amazing">5 stars</label>
+         
+        </fieldset>
+        <input id="comment_review" style="margin: -10px !important" class="form-control form-control-lg input-custom" type="text" name="review_comment" placeholder="Comment about this hostel">
+        <div class="d-flex justify-content-center mt-4">
+        <button id="publish" class="btn btn-primary btn-lg">Publish</button>
+        </div>
+        
+
+
+      </div>
+     
+        
+   
+    </div>
+
+    <div style="background-color:#F6F4F4 " class="col-lg-6 mt-5 ">
+      
+      <h1 style="text-align: center" class="contact mt-3">Overall Ratings</h1>
+     <div class="mt-4  flex justify-content-center">
+      <span id="star1" class="fa fa-star auto-size "></span>
+      <span id="star2" class="fa fa-star auto-size "></span>
+      <span id="star3" class="fa fa-star auto-size "></span>
+      <span id="star4" class="fa fa-star auto-size"></span>
+      <span id="star5" class="fa fa-star auto-size"></span>
+     </div>
+     <div>
+     <p style="text-align: center" id="Ratings"></p> 
+     </div>
+      
+
+
+   
+      <div>
+        @if(count($Rating)>0)
+        @foreach ($Rating as $Rat)
+        <div  class="d-flex ">
+          <p style="padding-top: 5px"><i class="fa fa-user user-cls mr-2"></i></p>
+
+
+        <p style="font-size: 30px;color:black;">{{$Rat->uname}}</p>
+        <div class="ml-3 " style="font-size:20px;width:100%">
+        <p style="border: 0.5px solid#E5E5E5  ;border-radius:5px;padding-left:4px">{{$Rat->comment}}</p>
+        </div>
+        </div>
+        
+        @endforeach
+        <div class="flex justify-content-center">
+        {{$Rating->links()}} 
+        </div>
+       
+        @else
+        <p>No comments found</p>
+        @endif
+        
+        
+      </div>
+
+
+
+
+
+
+    </div>
+
+
+
+
+    </div>
+
+
+    @endforeach
+    @endforeach
+
+    
 </div>
 
+
+
+
+<div style="position:fixed;top:50%;right:0;">
+  <button  id="start-chat" class="btn btn-primary start-chat"><i style="color:white;margin-right:3px" class="fa fa-comments fa-1x"></i>Start Chat</button>
+</div>
+
+
+
+
+
+
+
+
+
+
+
 </section>
-@endforeach
-@endforeach
+@include('inc.footer')
+
+
+
+    
 
 
 
 <script>
+
+
+  $("#publish").click(function()
+  {
+    var rate=$("input[name='rating']:checked").val();
+    var cmnt=$("#comment_review").val();
+    adminhostelID=JSON.parse(<?php echo $userid; ?> );
+    var Hname=$("#hostel_N").text();
+    $.ajaxSetup({
+    headers: {
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    }
+});
+
+
+   $.ajax({ 
+       type: "POST", 
+       url: "GiveReview", 
+       data:{'rate':JSON.stringify(rate),'cmnt':JSON.stringify(cmnt),'adminhostelID':JSON.stringify(adminhostelID),'Hname':JSON.stringify(Hname)},
+       error: function(xhr, status, error) {
+      alert(xhr.responseText);
+    },
+    success:function(result)
+    {
+      if(result=="success");
+      {
+        location.reload();
+      }
+     
+      
+        
+    }
+    
+});
+    
+
+    
+
+
+
+  });
+
+
+  var Rate;
+var x;
+var overallRating=0;
+Rate=<?php echo $ratings; ?> ;
+
 $( document ).ready(function() {
     $(".pnlm-controls-container").remove();
+    for(var u=0;u<Rate.length;u++)
+{
+
+  
+  x=Rate[u].rating;
+  overallRating=overallRating+x;
+
+
+}
+var totalrating= overallRating/5;
+console.log(totalrating);
+
+  if(totalrating<=1)
+  {
+    $('#star1').css('color','black');
+  $('#star2').css('color','black');
+  $('#star3').css('color','black');
+  $('#star4').css('color','black');
+  $('#star5').css('color','black');
+ 
+  }
+  else if(totalrating<=2)
+  {
+  $('#star1').css('color','#f5bd23');
+  
+
+  }
+  else if(totalrating<=3)
+  {
+    $('#star1').css('color','#f5bd23');
+  $('#star2').css('color','#f5bd23');
+  
+
+
+  }
+ else if(totalrating<=4)
+ {
+  $('#star1').css('color','#f5bd23');
+  $('#star2').css('color','#f5bd23');
+  $('#star3').css('color','#f5bd23');
+  
+  
+
+ }
+  
+  else if(totalrating<=5){
+    $('#star1').css('color','#f5bd23');
+  $('#star2').css('color','#f5bd23');
+  $('#star3').css('color','#f5bd23');
+  $('#star4').css('color','#f5bd23');
+ 
+
+  }
+  else if(totalrating==5)
+{
+  $('#star1').css('color','#f5bd23');
+  $('#star2').css('color','#f5bd23');
+  $('#star3').css('color','#f5bd23');
+  $('#star4').css('color','#f5bd23');
+  $('#star5').css('color','#f5bd23');
+
+}
+
+$("#Ratings").text(totalrating+"/5");
+
+  
+
+
+
+
+
+
     
 });
 
@@ -186,6 +423,38 @@ $("#visit").click(function()
     adminhostelID=JSON.parse(<?php echo $userid; ?> );
     window.location = "http://localhost:8080/virtualtour/visitVirtually/"+adminhostelID;
     
+
+});
+
+$("#start-chat").click(function()
+{
+  adminhostelID=JSON.parse(<?php echo $userid; ?> );
+  $.ajaxSetup({
+    headers: {
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    }
+});
+
+
+   $.ajax({ 
+       type: "POST", 
+       url: "startChat", 
+       data:{'adminhostelID':JSON.stringify(adminhostelID)},
+       error: function(xhr, status, error) {
+      alert(xhr.responseText);
+    },
+    success:function(result)
+    {
+      if(result=="success")
+      {
+        window.location="http://localhost:8080/virtualtour/chat";
+
+      }
+      
+        
+    }
+    
+});  
 
 });
 

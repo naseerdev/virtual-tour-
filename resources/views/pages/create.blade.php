@@ -16,7 +16,7 @@
                 <h3 class="text-muted form-labels">Enter your Hostel Name</h3>
             </div>
             <div class="col-md-5 col-sm-12 mt-5  responsive-bottom">
-                <input class="form-control form-control-lg input-custom" type="text" name="hostel" placeholder="Enter Hostel Name">
+                <input class="form-control form-control-lg input-custom" type="text" name="hostel" placeholder="Enter Hostel Name" required>
             </div>
 
 
@@ -24,21 +24,21 @@
                 <h3 class="text-muted form-labels">Enter your phone number</h3>
             </div>
             <div class="col-md-5 col-sm-12 mt-5  responsive-bottom">
-                <input class="form-control form-control-lg input-custom" type="tel" name="phone" placeholder="Enter Phone Number">
+                <input class="form-control form-control-lg input-custom" type="tel" name="phone" placeholder="Enter Phone Number" required>
             </div>
 
             <div class="col-md-5 col-sm-12 mt-5 responsive-top ">
                 <h3 class="text-muted form-labels">Enter your Email address</h3>
             </div>
             <div class="col-md-5 col-sm-12 mt-5  responsive-bottom">
-                <input class="form-control form-control-lg input-custom" type="email" name="email" placeholder="Enter Email Address">
+                <input class="form-control form-control-lg input-custom" type="email" name="email" placeholder="Enter Email Address" required>
             </div>
     
             <div class="col-md-5 col-sm-12 mt-5 responsive-top ">
                 <h3 class="text-muted form-labels">Enter City Name</h3>
             </div>
             <div class="col-md-5 col-sm-12 mt-5  responsive-bottom">
-                <input class="form-control form-control-lg input-custom" type="text" name="city" placeholder="Enter City Name">
+                <input class="form-control form-control-lg input-custom" type="text" name="city" placeholder="Enter City Name" required>
             </div>
     
     
@@ -47,7 +47,7 @@
                 <h3 class="text-muted form-labels">Your Hostel Address</h3>
             </div>
             <div class="col-md-5 col-sm-12 my-5  responsive-bottom">
-                <input class="form-control form-control-lg input-custom" type="text" name="address" placeholder="Enter Address">
+                <input class="form-control form-control-lg input-custom" type="text" name="address" placeholder="Enter Address" required>
             </div>
         </div>
     </div><!-- end of address -->
@@ -90,11 +90,11 @@
         
              <div class="col-lg-4 col-md-6 col-sm-12 days-responsive">
          
-            <input class="form-control form-control-lg input-custom input-meal" type="text" name="monday_breakfast" placeholder="Breakfast">
+            <input class="form-control form-control-lg input-custom input-meal" type="text" name="monday_breakfast" placeholder="Breakfast" required>
     
              </div>
              <div class="col-lg-4 col-md-6 col-sm-12">
-                <input class="form-control form-control-lg input-custom input-meal" type="text" name="monday_dinner" placeholder="Dinner">
+                <input class="form-control form-control-lg input-custom input-meal" type="text" name="monday_dinner" placeholder="Dinner" required>
             </div>
             
          </div><!-- end of monday -->
@@ -106,11 +106,11 @@
            
                 <div class="col-lg-4 col-md-6 col-sm-12 days-responsive">
             
-               <input class="form-control form-control-lg input-custom input-meal" type="text" name="tuesday_breakfast" placeholder="Breakfast">
+               <input class="form-control form-control-lg input-custom input-meal" type="text" name="tuesday_breakfast" placeholder="Breakfast" required>
        
                 </div>
                 <div class="col-lg-4 col-md-6 col-sm-12">
-                   <input class="form-control form-control-lg input-custom input-meal" type="text" name="tuesday_dinner" placeholder="Dinner">
+                   <input class="form-control form-control-lg input-custom input-meal" type="text" name="tuesday_dinner" placeholder="Dinner" required>
                </div>
                
             </div><!-- end of tuesday -->
@@ -122,11 +122,11 @@
                
                     <div class="col-lg-4 col-md-6 col-sm-12 days-responsive">
                 
-                   <input class="form-control form-control-lg input-custom input-meal" type="text" name="wednesday_breakfast" placeholder="Breakfast">
+                   <input class="form-control form-control-lg input-custom input-meal" type="text" name="wednesday_breakfast" placeholder="Breakfast" required>
            
                     </div>
                     <div class="col-lg-4 col-md-6 col-sm-12">
-                       <input class="form-control form-control-lg input-custom input-meal" type="text" name="wednesday_dinner" placeholder="Dinner">
+                       <input class="form-control form-control-lg input-custom input-meal" type="text" name="wednesday_dinner" placeholder="Dinner" required>
                    </div>
                    
                 </div><!-- end of wednesday -->
@@ -138,11 +138,11 @@
                    
                         <div class="col-lg-4 col-md-6 col-sm-12 days-responsive">
                     
-                       <input class="form-control form-control-lg input-custom input-meal" type="text" name="thursday_breakfast" placeholder="Breakfast">
+                       <input class="form-control form-control-lg input-custom input-meal" type="text" name="thursday_breakfast" placeholder="Breakfast" required>
                
                         </div>
                         <div class="col-lg-4 col-md-6 col-sm-12">
-                           <input class="form-control form-control-lg input-custom input-meal" type="text" name="thursday_dinner" placeholder="Dinner">
+                           <input class="form-control form-control-lg input-custom input-meal" type="text" name="thursday_dinner" placeholder="Dinner" required>
                        </div>
                        
                     </div><!-- end of thursday -->
@@ -154,11 +154,11 @@
                        
                             <div class="col-lg-4 col-md-6 col-sm-12 days-responsive">
                         
-                           <input class="form-control form-control-lg input-custom input-meal" type="text" name="friday_breakfast" placeholder="Breakfast">
+                           <input class="form-control form-control-lg input-custom input-meal" type="text" name="friday_breakfast" placeholder="Breakfast" required>
                    
                             </div>
                             <div class="col-lg-4 col-md-6 col-sm-12">
-                               <input class="form-control form-control-lg input-custom input-meal" type="text" name="friday_dinner" placeholder="Dinner">
+                               <input class="form-control form-control-lg input-custom input-meal" type="text" name="friday_dinner" placeholder="Dinner" required>
                            </div>
                            
                         </div><!-- end of friday -->
@@ -170,11 +170,11 @@
                            
                                 <div class="col-lg-4 col-md-6 col-sm-12 days-responsive">
                             
-                               <input class="form-control form-control-lg input-custom input-meal" type="text" name="saturday_breakfast" placeholder="Breakfast">
+                               <input class="form-control form-control-lg input-custom input-meal" type="text" name="saturday_breakfast" placeholder="Breakfast" required>
                        
                                 </div>
                                 <div class="col-lg-4 col-md-6 col-sm-12">
-                                   <input class="form-control form-control-lg input-custom input-meal" type="text" name="saturday_dinner" placeholder="Dinner">
+                                   <input class="form-control form-control-lg input-custom input-meal" type="text" name="saturday_dinner" placeholder="Dinner" required>
                                </div>
                                
                             </div><!-- end of saturday -->
@@ -186,11 +186,11 @@
                                
                                     <div class="col-lg-4 col-md-6 col-sm-12 days-responsive">
                                 
-                                   <input class="form-control form-control-lg input-custom input-meal" type="text" name="sunday_breakfast" placeholder="Breakfast">
+                                   <input class="form-control form-control-lg input-custom input-meal" type="text" name="sunday_breakfast" placeholder="Breakfast" required>
                            
                                     </div>
                                     <div class="col-lg-4 col-md-6 col-sm-12">
-                                       <input class="form-control form-control-lg input-custom input-meal" type="text" name="sunday_dinner" placeholder="Dinner">
+                                       <input class="form-control form-control-lg input-custom input-meal" type="text" name="sunday_dinner" placeholder="Dinner" required>
                                    </div>
                                    
                                 </div><!-- end of sunday -->
@@ -204,7 +204,7 @@
                                             <p class=" custom-paragrah">Other comments you want to give about your hostel write here.  </p>
                                             <div class="form-group">
                                                 
-                                                <textarea class="form-control" name="exampleFormControlTextarea1" rows="3"></textarea>
+                                                <textarea class="form-control" name="exampleFormControlTextarea1" rows="3" required></textarea>
                                               </div>
                                         </div>
                                         
@@ -234,4 +234,6 @@
     
     </section><!-- end of input form layout -->
     {!! Form::close() !!}
+    @include('inc.footer')
     @endsection
+   

@@ -23,28 +23,28 @@
                 <h3 class="text-muted form-labels">Update your Hostel Name</h3>
             </div>
             <div class="col-md-5 col-sm-12 mt-5  responsive-bottom">
-                <input class="form-control form-control-lg input-custom" type="text" name="hostel" value=" {{$address->hostel_name}}">
+                <input class="form-control form-control-lg input-custom" type="text" name="hostel" value=" {{$address->hostel_name}}" required>
             </div>
 
             <div class="col-md-5 col-sm-12 mt-5 responsive-top ">
                 <h3 class="text-muted form-labels">Update your phone number</h3>
             </div>
             <div class="col-md-5 col-sm-12 mt-5  responsive-bottom">
-                <input class="form-control form-control-lg input-custom" type="tel" name="phone" value="{{$address->ph_no}}"  >
+                <input class="form-control form-control-lg input-custom" type="tel" name="phone" value="{{$address->ph_no}}" required >
             </div>
 
             <div class="col-md-5 col-sm-12 mt-5 responsive-top ">
                 <h3 class="text-muted form-labels">Update your Email address</h3>
             </div>
             <div class="col-md-5 col-sm-12 mt-5  responsive-bottom">
-                <input class="form-control form-control-lg input-custom" type="email" name="email" value="{{$address->email_add }}">
+                <input class="form-control form-control-lg input-custom" type="email" name="email" value="{{$address->email_add }}" required>
             </div>
     
             <div class="col-md-5 col-sm-12 mt-5 responsive-top ">
                 <h3 class="text-muted form-labels">Update City Name</h3>
             </div>
             <div class="col-md-5 col-sm-12 mt-5  responsive-bottom">
-                <input class="form-control form-control-lg input-custom" type="text" name="city" value="{{$address->city }}">
+                <input class="form-control form-control-lg input-custom" type="text" name="city" value="{{$address->city }}" required>
             </div>
     
     
@@ -53,7 +53,7 @@
                 <h3 class="text-muted form-labels">Update Hostel Address</h3>
             </div>
             <div class="col-md-5 col-sm-12 my-5  responsive-bottom">
-                <input class="form-control form-control-lg input-custom" type="text" name="address" value="{{$address->h_address}}" >
+                <input class="form-control form-control-lg input-custom" type="text" name="address" value="{{$address->h_address}}" required >
             </div>
         </div>
     </div><!-- end of address -->
@@ -102,11 +102,11 @@
         
              <div class="col-lg-4 col-md-6 col-sm-12 days-responsive">
          
-            <input class="form-control form-control-lg input-custom input-meal" type="text" name="monday_breakfast" placeholder="breakfast" value="{{$meal->monday_b}}">
+            <input class="form-control form-control-lg input-custom input-meal" type="text" name="monday_breakfast" placeholder="breakfast" value="{{$meal->monday_b}}" required>
     
              </div>
              <div class="col-lg-4 col-md-6 col-sm-12">
-                <input class="form-control form-control-lg input-custom input-meal" type="text" name="monday_dinner" placeholder="dinner" value="{{$meal->monday_d}}">
+                <input class="form-control form-control-lg input-custom input-meal" type="text" name="monday_dinner" placeholder="dinner" value="{{$meal->monday_d}}" required>
             </div>
             
          </div><!-- end of monday -->
@@ -118,11 +118,11 @@
            
                 <div class="col-lg-4 col-md-6 col-sm-12 days-responsive">
             
-               <input class="form-control form-control-lg input-custom input-meal" type="text" name="tuesday_breakfast" placeholder="breakfast" value="{{$meal->tuesday_b}}">
+               <input class="form-control form-control-lg input-custom input-meal" type="text" name="tuesday_breakfast" placeholder="breakfast" value="{{$meal->tuesday_b}}" required>
        
                 </div>
                 <div class="col-lg-4 col-md-6 col-sm-12">
-                   <input class="form-control form-control-lg input-custom input-meal" type="text" name="tuesday_dinner" placeholder="dinner" value="{{$meal->tuesday_d}}">
+                   <input class="form-control form-control-lg input-custom input-meal" type="text" name="tuesday_dinner" placeholder="dinner" value="{{$meal->tuesday_d}}" required>
                </div>
                
             </div><!-- end of tuesday -->
@@ -134,11 +134,11 @@
                
                     <div class="col-lg-4 col-md-6 col-sm-12 days-responsive">
                 
-                   <input class="form-control form-control-lg input-custom input-meal" type="text" name="wednesday_breakfast" placeholder="Breakfast" value="{{$meal->wednesday_b}}">
+                   <input class="form-control form-control-lg input-custom input-meal" type="text" name="wednesday_breakfast" placeholder="Breakfast" value="{{$meal->wednesday_b}}" required>
            
                     </div>
                     <div class="col-lg-4 col-md-6 col-sm-12">
-                       <input class="form-control form-control-lg input-custom input-meal" type="text" name="wednesday_dinner" placeholder="Dinner" value="{{$meal->wednesday_d}}">
+                       <input class="form-control form-control-lg input-custom input-meal" type="text" name="wednesday_dinner" placeholder="Dinner" value="{{$meal->wednesday_d}}" required>
                    </div>
                    
                 </div><!-- end of wednesday -->
@@ -150,11 +150,11 @@
                    
                         <div class="col-lg-4 col-md-6 col-sm-12 days-responsive">
                     
-                       <input class="form-control form-control-lg input-custom input-meal" type="text" name="thursday_breakfast" placeholder="Breakfast" value="{{$meal->thursday_b}}">
+                       <input class="form-control form-control-lg input-custom input-meal" type="text" name="thursday_breakfast" placeholder="Breakfast" value="{{$meal->thursday_b}}" required>
                
                         </div>
                         <div class="col-lg-4 col-md-6 col-sm-12">
-                           <input class="form-control form-control-lg input-custom input-meal" type="text" name="thursday_dinner" placeholder="Dinner" value="{{$meal->thursday_d}}">
+                           <input class="form-control form-control-lg input-custom input-meal" type="text" name="thursday_dinner" placeholder="Dinner" value="{{$meal->thursday_d}}" required>
                        </div>
                        
                     </div><!-- end of thursday -->
@@ -166,11 +166,11 @@
                        
                             <div class="col-lg-4 col-md-6 col-sm-12 days-responsive">
                         
-                           <input class="form-control form-control-lg input-custom input-meal" type="text" name="friday_breakfast" placeholder="Breakfast" value="{{$meal->friday_b}}">
+                           <input class="form-control form-control-lg input-custom input-meal" type="text" name="friday_breakfast" placeholder="Breakfast" value="{{$meal->friday_b}}" required>
                    
                             </div>
                             <div class="col-lg-4 col-md-6 col-sm-12">
-                               <input class="form-control form-control-lg input-custom input-meal" type="text" name="friday_dinner" placeholder="Dinner" value="{{$meal->friday_d}}">
+                               <input class="form-control form-control-lg input-custom input-meal" type="text" name="friday_dinner" placeholder="Dinner" value="{{$meal->friday_d}}" required>
                            </div>
                            
                         </div><!-- end of friday -->
@@ -182,11 +182,11 @@
                            
                                 <div class="col-lg-4 col-md-6 col-sm-12 days-responsive">
                             
-                               <input class="form-control form-control-lg input-custom input-meal" type="text" name="saturday_breakfast" placeholder="Breakfast" value="{{$meal->saturday_b}}">
+                               <input class="form-control form-control-lg input-custom input-meal" type="text" name="saturday_breakfast" placeholder="Breakfast" value="{{$meal->saturday_b}}" required>
                        
                                 </div>
                                 <div class="col-lg-4 col-md-6 col-sm-12">
-                                   <input class="form-control form-control-lg input-custom input-meal" type="text" name="saturday_dinner" placeholder="Dinner" value="{{$meal->saturday_d}}">
+                                   <input class="form-control form-control-lg input-custom input-meal" type="text" name="saturday_dinner" placeholder="Dinner" value="{{$meal->saturday_d}}" required>
                                </div>
                                
                             </div><!-- end of saturday -->
@@ -198,11 +198,11 @@
                                
                                     <div class="col-lg-4 col-md-6 col-sm-12 days-responsive">
                                 
-                                   <input class="form-control form-control-lg input-custom input-meal" type="text" name="sunday_breakfast" placeholder="Breakfast" value="{{$meal->sunday_b}}">
+                                   <input class="form-control form-control-lg input-custom input-meal" type="text" name="sunday_breakfast" placeholder="Breakfast" value="{{$meal->sunday_b}}" required>
                            
                                     </div>
                                     <div class="col-lg-4 col-md-6 col-sm-12">
-                                       <input class="form-control form-control-lg input-custom input-meal" type="text" name="sunday_dinner" placeholder="Dinner" value="{{$meal->sunday_d}}">
+                                       <input class="form-control form-control-lg input-custom input-meal" type="text" name="sunday_dinner" placeholder="Dinner" value="{{$meal->sunday_d}}" required>
                                    </div>
                                    
                                 </div><!-- end of sunday -->
@@ -216,7 +216,7 @@
                                             <p class=" custom-paragrah">Other comments you want to give about your hostel write here.  </p>
                                             <div class="form-group">
                                                 
-                                                <textarea class="form-control" name="exampleFormControlTextarea1" rows="3"  ><?php echo $address->admin_cmnt; ?></textarea>
+                                                <textarea class="form-control" name="exampleFormControlTextarea1" rows="3" required ><?php echo $address->admin_cmnt; ?></textarea>
                                               </div>
                                         </div>
 
@@ -256,5 +256,6 @@
     
     
     </section><!-- end of input form layout -->
-    
+    @include('inc.footer')
     @endsection
+   

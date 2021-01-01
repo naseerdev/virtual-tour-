@@ -32,8 +32,10 @@
       
      <link href="{{ asset('public/css/custom.css') }}" rel="stylesheet">
       <link href="{{ asset('public/css/quries.css') }}" rel="stylesheet">
-      <link href="{{ asset('public/css/bootstrap.min.css') }}" rel="stylesheet">
+      <link href="{{ asset('public/css/bootstrap.min.css') }}" rel="stylesheet" id="bootstrap-css">
       <link href="{{ asset('public/css/app.css') }}" rel="stylesheet">
+      <link rel="stylesheet" href="public/css/starability-all.min.css">
+      
 
       
        
@@ -43,6 +45,7 @@
          <!-- Scripts -->
     <!--     <script src="public\js\app.js" ></script>  -->
     
+    <!-- <script src="{{ asset('public/js/app.js')  }}"  defer></script> -->
     <script src="{{ asset('public/js/jquery.min.js') }}" ></script>  
     <script src="{{ asset('public/js/bootstrap.min.js') }}" ></script>  
     
@@ -82,6 +85,7 @@
     <script src="{{ asset('public/js/previewTour.js') }}" ></script>
     <script src="{{ asset('public/js/visitSite.js') }}" ></script>
     <script src="{{ asset('public/js/home.js') }}" ></script>
+    
 
     <!--
     <script src="public\js\hostel-entry.js"></script>

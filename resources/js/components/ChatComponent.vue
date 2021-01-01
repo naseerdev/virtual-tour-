@@ -51,6 +51,7 @@
 
 </template>
 
+
 <script>
     export default {
         props: ['chats', 'userid', 'friendid']
